@@ -20,12 +20,10 @@
 </form>
 
 <?php
-    function storeUserIDInSession($username, $db){
-        $query = sprintf("SELECT user_id FROM users WHERE username='%s'", $username);
-        $user = mysqli_query($db, $query);
-        $userID = mysqli_fetch_array($user)["user_id"];
-        $_SESSION["userID"] = $userID;
-        return $userID;
+    function storeUserIdInSession($username, $db){
+        //TODO
+        $_SESSION["userId"] = $userId;
+        return $userId;
     }
 
 
@@ -39,9 +37,9 @@
         $query = sprintf("INSERT INTO users (email, username, password, fullname) VALUES('%s', '%s', '%s', '%s')", $email, $username, $password, $fullname);
         mysqli_query($db, $query);
 
-        $userID = storeUserIDInSession($username, $db);
+        $userId = storeUserIdInSession($username, $db);
 
-        $query = sprintf("INSERT INTO journals (user_id) VALUES('%s')",$userID);
+        $query = sprintf("INSERT INTO journals (user_id) VALUES('%s')",$userId);
         mysqli_query($db, $query);
 
         //TODO: insert file image as well

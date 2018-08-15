@@ -2,7 +2,7 @@
     session_start();
     $db = mysqli_connect("localhost", "ldbuser", $_ENV["DB_PASSWORD"], "trainingproject");
 
-    if(isset($_SESSION["userID"])){
+    if(isset($_SESSION["userId"])){
         echo "<script>location.href='\index.php'</script>";
 }
 ?>
@@ -31,10 +31,10 @@
             echo "Email Address and/or Password incorrect. Please try again.";
         }
         else{
-            $userID = mysqli_fetch_array($result)["user_id"];
-            echo "userID" . $userID . "<br>"; //DEBUG
+            $userId = mysqli_fetch_array($result)["user_id"];
+            echo "userId" . $userId . "<br>"; //DEBUG
             echo "query" . $query . "<br>";
-            $_SESSION["userID"] = $userID;
+            $_SESSION["userId"] = $userId;
             mysqli_close($db);
             echo "<script>location.href='\index.php'</script>";
         }

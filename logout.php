@@ -5,12 +5,12 @@
 <body>
 <?php session_start(); ?>
 
-<?php    if(isset($_SESSION["userID"])){
-        unset($_SESSION["userID"]);
+<?php    if(isset($_SESSION["userId"])){
+        unset($_SESSION["userId"]);
     }
 ?>
 
-<?php if(isset($_SESSION["userID"])): ?>
+<?php if(isset($_SESSION["userId"])): ?>
         Logout failed
 <?php else: ?>
         <script>location.href='/login.php'</script>

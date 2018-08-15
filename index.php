@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $db = mysqli_connect("localhost", "ldbuser", $_ENV["DB_PASSWORD"], "trainingproject");
+    $db = mysqli_connect("localhost", "ldbuser", $_ENV["DB_PASSWORD"], "trainingproject"); //TODO crud
 ?>
 
 <!DOCTYPE html>
@@ -10,9 +10,9 @@
 </head>
 <body>
 
-<?php
-    $userID = $_SESSION["userID"];
-    $query = sprintf("SELECT username FROM users WHERE user_id='%s'", $userID);
+<?php //TODO read() user from crud instead, then user["username"], etc
+    $userId = $_SESSION["userId"];
+    $query = sprintf("SELECT username FROM users WHERE user_id='%s'", $userId);
     $result = mysqli_query($db, $query);
     $username = mysqli_fetch_array($result)["username"];
 ?>
@@ -22,8 +22,8 @@
     <!--TODO form to create new journal-->
 </form>
 
-<?php
-    $query = sprintf("SELECT * FROM journals WHERE user_id='%s'",$userID);
+<?php //TODO print journals. make it just like the /journal URL. might be good to look into templates after this.
+    $query = sprintf("SELECT * FROM journals WHERE user_id='%s'",$userId);
     $journals = mysqli_query($db, $query);
     $numberOfJournals =  mysqli_num_rows($journals);
 
@@ -32,9 +32,9 @@
     }
     else{
         foreach ($journals as $journal){
-            $journalID = $journal["journal_id"];
+            $journalId = $journal["journal_id"];
             $journalName = $journal["journal_name"];
-            $journalURL = "/journal.php?journalID=".$journalID."&journalName=".urlencode($journalName);
+            $journalURL = "/journal.php?journalId=".$journalId."&journalName=".urlencode($journalName);
             echo "<a href=".$journalURL.">".$journalName."</a><br><br>";
         }
     }
