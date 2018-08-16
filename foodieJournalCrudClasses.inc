@@ -106,6 +106,12 @@ class usersCrud{
     function fetchUserId($username){
         $query = sprintf("SELECT user_id FROM users WHERE username='%s'", $username);
         $user = mysqli_query($this->db, $query);
+
+        $numUsersFound = mysqli_num_rows($user);
+        if ($numUsersFound === 0){
+            return $numUsersFound;
+        }
+
         $userId = mysqli_fetch_array($user)["user_id"];
         return $userId;
     }
