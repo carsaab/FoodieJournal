@@ -1,14 +1,32 @@
-<?php
-    require_once("foodieJournalCrudClasses.inc");
-    require_once("foodie-journal-printers.php");
-    session_start();
-    $UsersCrud = new usersCrud();
-    $JournalsCrud = new journalsCrud();
+--> MAIN
+Get 1st url param
+Require the file that matches that param
 
-    $userId = $_SESSION["userId"];
-    $username = $UsersCrud->read($userId)["username"];
+
+--> Login.php
+<?php
+class Login {
+
+    public function __construct() {
+        require_once("foodieJournalCrudClasses.inc");
+        require_once("foodie-journal-printers.php");
+        session_start();
+        $UsersCrud = new usersCrud();
+        $JournalsCrud = new journalsCrud();
+
+        $userId = $_SESSION["userId"];
+        $username = $UsersCrud->read($userId)["username"];
+        $journals = $journalsCrud->getJournals($userId);
+        require_once ("login.html");
+    }
+}
 ?>
 
+
+
+
+
+--> LOGIN.html
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +40,7 @@
     <!--TODO form to create new journal-->
 </form>
 
-<?php printCurrentUsersJournals($userId, $JournalsCrud); ?>
+<?php printCurrentUsersJournals($journals); ?>
 
 <br> <br>
 <a href="/account.php">Account</a> <br>

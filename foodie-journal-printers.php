@@ -1,5 +1,7 @@
 <?php
 
+
+class Printers {
 function printStars($rating){
     if ($rating == "1"){
         echo "&starf;";
@@ -80,9 +82,5 @@ function printCurrentUsersJournals($userId, $JournalsCrud){
     }
     return;
 }
-
+}
 ?>
-
-
-
-
