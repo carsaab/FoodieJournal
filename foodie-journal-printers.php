@@ -29,9 +29,9 @@ function printStars($rating){
 
 
 function printEntry($entry){
-    echo $entry["restaurant_name"] . "<br>";
+    echo "<h3>".$entry["restaurant_name"]."</h3>";
     printStars($entry["rating"]);
-    echo "Impression: " . $entry["text"] . "<br>";
+    echo "<br> <b>Impression:</b> " . $entry["text"] . "<br>";
     echo $entry["created"] . "<br>";
     echo "<br><br>";
     return;

@@ -6,11 +6,20 @@
 
 <body>
 
-<a href="/logout.php">Logout</a>
+<a href="\index.php">FoodieJournal</a>
 
 <br><br><br><br>
 
+<a href="/logout.php">Logout</a>
+
+<br><br>
+
 <a href="/delete.php">Delete Account</a>
+
+<br><br><br><br>
+
+<a href="\index.php">Return to Homepage</a>
+
 
 </body>
 </html>

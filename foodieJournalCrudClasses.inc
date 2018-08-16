@@ -120,10 +120,10 @@ class usersCrud{
     function create($user){
         $email = mysqli_real_escape_string($this->db, $user["email"]);
         $username = mysqli_real_escape_string($this->db, $user["username"]);
-        $password = mysqli_real_escape_string($this->db. $user["password"]);
+        $password = mysqli_real_escape_string($this->db, $user["password"]);
         $fullname = mysqli_real_escape_string($this->db, $user["fullname"]);
         //TODO photo upload functionality in progress $profile_picture_file = mysqli_real_escape_string($this->db, $user["profile_picture_file"]);
-        $query = sprintf("INSERT INTO users ('email', 'username', 'password', 'fullname') VALUES('%s', '%s', '%s', '%s')", $email, $username, $password, $fullname);
+        $query = sprintf("INSERT INTO users (email, username, password, fullname) VALUES('%s', '%s', '%s', '%s')", $email, $username, $password, $fullname);
         mysqli_query($this->db, $query);
 
         $userId = $this->fetchUserId($username);
@@ -143,7 +143,7 @@ class usersCrud{
 
     function delete($userId){
         $userId = mysqli_real_escape_string($this->db, $userId);
-        $query = sprintf("DELETE FROM users WHERE 'userId'='%s'", $userId);
+        $query = sprintf("DELETE FROM users WHERE user_id='%s'", $userId);
         mysqli_query($this->db, $query);
         //TODO catch errors
     }

@@ -19,7 +19,7 @@ if (isset($_POST["submit"])){
     $_SESSION["userId"] = $userId;
 
     $JournalsCrud = new journalsCrud($userId);
-    $JournalsCrud->create("My Food Adventures");
+    $JournalsCrud->create(["journalName" => "My Food Adventures"]);
 
     //TODO: insert file image as well
     //TODO hash password
@@ -27,5 +27,5 @@ if (isset($_POST["submit"])){
 ?>
 
 <html>
-<script>location.href="\index"</script>
+<script>location.href="\index.php"</script>
 </html>
