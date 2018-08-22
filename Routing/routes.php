@@ -4,7 +4,7 @@
 return[
 
     //Account Controller
-    ['GET', '/account/manage', 'AccountController','manage'],
+    ['GET', '/account/manage', 'AccountController','manage'], /* View */
     ['POST', '/account/create', 'AccountController', 'create'],
     ['GET', '/account/delete', 'AccountController', 'delete'],
 
@@ -16,7 +16,7 @@ return[
     ['GET', '/', 'JournalController', 'index'],
     ['POST', '/journal/create', 'JournalController', 'create'],
     ['GET', '/journal/delete', 'JournalController', 'delete'],
-    ['GET', '/journal/open', 'JournalController', 'open'],
+    ['GET', '/journal/open', 'JournalController', 'open'], /* View */
     ['POST', '/journal/write', 'JournalController', 'write'],
 
     ['GET', '/login/write', 'Login', 'write'],

@@ -9,19 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="567786f8-f079-4705-a4d1-bd41de487374" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/AccountController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controllers/Login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Public/Main.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Routing/Router.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Routing/routes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Views/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crud-classes/EntriesCrud.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/EntriesCrud.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crud-classes/JournalsCrud.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/JournalsCrud.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crud-classes/UsersCrud.php" beforeDir="false" afterPath="$PROJECT_DIR$/Models/UsersCrud.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/foodieJournalCrudClasses.inc" beforeDir="false" afterPath="$PROJECT_DIR$/Routing/Route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpd.conf" beforeDir="false" afterPath="$PROJECT_DIR$/httpd.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/AuthenticationController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/JournalController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RestApiControllers/AccountRestController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RestApiControllers/JournalRestController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RpcApiControllers/AuthenticationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Routing/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/Routing/routes.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,15 +44,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="foodie-journal-printers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/foodie-journal-printers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controllers/Login.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,46 +53,42 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Public/Main.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-              <folding>
-                <element signature="e#6#45#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Routing/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="8" selection-end-column="62" />
+            <state relative-caret-position="255">
+              <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Controllers/AccountController.php">
+      <file leaf-file-name="AuthenticationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RpcApiControllers/AuthenticationController.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="JournalRestController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RestApiControllers/JournalRestController.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="AccountRestController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RestApiControllers/AccountRestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state>
+              <caret column="115" selection-start-column="115" selection-end-column="115" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Router.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Routing/Router.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="164" selection-start-line="27" selection-start-column="164" selection-end-line="27" selection-end-column="164" />
-              <folding>
-                <element signature="e#41#76#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+      <file leaf-file-name="AuthenticationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/AuthenticationController.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="JournalController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Controllers/JournalController.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="account.php" pinned="false" current-in-tab="false">
@@ -119,11 +100,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="account.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Views/account.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
               <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controllers/Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -176,10 +166,12 @@
         <option value="$PROJECT_DIR$/Routing/Route.php" />
         <option value="$PROJECT_DIR$/Public/Main.php" />
         <option value="$PROJECT_DIR$/Routing/Router.php" />
-        <option value="$PROJECT_DIR$/Routing/routes.php" />
         <option value="$PROJECT_DIR$/Controllers/Login.php" />
         <option value="$PROJECT_DIR$/Controllers/AccountController.php" />
         <option value="$PROJECT_DIR$/Views/account.html" />
+        <option value="$PROJECT_DIR$/Routing/routes.php" />
+        <option value="$PROJECT_DIR$/Controllers/Controller.php" />
+        <option value="$PROJECT_DIR$/RestApiControllers/AccountRestController.php" />
       </list>
     </option>
   </component>
@@ -228,7 +220,7 @@
             <path>
               <item name="TrainingProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="TrainingProject" type="462c0819:PsiDirectoryNode" />
-              <item name="Public" type="462c0819:PsiDirectoryNode" />
+              <item name="RestApiControllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="TrainingProject" type="b2602c69:ProjectViewProjectNode" />
@@ -238,7 +230,7 @@
             <path>
               <item name="TrainingProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="TrainingProject" type="462c0819:PsiDirectoryNode" />
-              <item name="Views" type="462c0819:PsiDirectoryNode" />
+              <item name="RpcApiControllers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -367,12 +359,12 @@
       <workItem from="1533580194497" duration="87000" />
       <workItem from="1533580295747" duration="48000" />
       <workItem from="1533580358508" duration="106445000" />
-      <workItem from="1534442507513" duration="43101000" />
+      <workItem from="1534442507513" duration="55307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160457000" />
+    <option name="totallyTimeSpent" value="172663000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -684,13 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Routing/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="8" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Routing/Router.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -698,13 +683,6 @@
           <folding>
             <element signature="e#41#76#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Controllers/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -728,6 +706,46 @@
           <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Routing/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RpcApiControllers/AuthenticationController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RestApiControllers/JournalRestController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RestApiControllers/AccountRestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="115" selection-start-column="115" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/AuthenticationController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controllers/JournalController.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
