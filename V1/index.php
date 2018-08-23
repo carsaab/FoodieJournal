@@ -43,7 +43,7 @@ class Login {
 <?php printCurrentUsersJournals($journals); ?>
 
 <br> <br>
-<a href="/account.php">Account</a> <br>
-<a href="/logout.php">Logout</a>
+<a href="/V1/account.phpphp">Account</a> <br>
+<a href="/V1/logout.php">Logout</a>
 </body>
 </html>
