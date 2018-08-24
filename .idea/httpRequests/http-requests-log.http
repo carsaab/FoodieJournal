@@ -1,0 +1,48 @@
+POST http://localhost:8000/account/create
+Accept: */*
+Cache-Control: no-cache
+
+say=Hi&to=Mom
+
+<> 2018-08-24T101809.200.html
+
+###
+
+POST http://localhost:8000/account/create
+Accept: */*
+Cache-Control: no-cache
+
+< email=hi@try.com&username=newgal&password=anything&fullname=bobsaggat
+
+###
+
+POST http://localhost:8000/account/create
+Accept: */*
+Cache-Control: no-cache
+
+email=hi@try.com&username=newgal&password=anything&fullname=bobsaggat
+
+<> 2018-08-24T101656.200.html
+
+###
+
+POST http://localhost:8000/account/create
+Accept: */*
+Cache-Control: no-cache
+
+email=hi@try.com&username=newgal&password=anything&fullname=bobsaggat
+
+<> 2018-08-24T101623.200.html
+
+###
+
+POST http://localhost:8000/account/create
+Accept: */*
+Cache-Control: no-cache
+
+['email'] => 'hi@try.com' ,    ['username'] => 'newgal',     ['password'] => 'anything',     ['fullname'] => 'bobsaggat'
+
+<> 2018-08-24T101403.200.html
+
+###
+

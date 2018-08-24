@@ -1,16 +1,15 @@
 <?php
+namespace TrainingProject\Models;
 
-class entriesCrud{
+class EntriesCrud extends Crud{
     private $journalId;
-    private $db;
 
     function __construct($journalId){
     $this->journalId = $journalId;
-    $this->db = mysqli_connect("localhost", "ldbuser", $_ENV["DB_PASSWORD"],
-    "trainingproject");
+    $this->db = $this->connectToDb();
     }
 
-    function create($entry){
+    public function create($entry){
     $restaurantName = mysqli_real_escape_string($this->db, $entry["restaurantName"]); //TODO write escapeEachValue() fn
     $rating = mysqli_real_escape_string($this->db, $entry["rating"]);
     $text =  mysqli_real_escape_string($this->db, $entry["text"]);
@@ -23,15 +22,15 @@ class entriesCrud{
     mysqli_query($this->db, $query);
     }
 
-    function read($entryId){
+    public function read($entryId){
     $query = sprintf("SELECT * FROM entries WHERE entry_id='%s'", $entryId);
     $entry = mysqli_fetch_array(mysqli_query($this->db, $query));
     return $entry;
     }
 
-    function update(){}
+    public function update(){}
 
-    function delete($entryId){
+    public function delete($entryId){
         $entryId = mysqli_real_escape_string($this->db, $entryId);
         $query = sprintf("DELETE FROM entries WHERE 'entry_id'='%s'", $entryId);
         mysqli_query($this->db, $query);
@@ -49,4 +48,3 @@ class entriesCrud{
     }
 }
 
-?>

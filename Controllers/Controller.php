@@ -2,9 +2,13 @@
 
 namespace TrainingProject\Controllers;
 
-class Controller{
-    public $view;
-    public $model;
+abstract class Controller{
+    protected $view;
+    protected $model;
+
+    protected function getPost(){
+        return $_POST;
+    }
 
     protected function redirect($url) {
         header('Location: ' . $url);

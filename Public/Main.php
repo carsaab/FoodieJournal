@@ -7,6 +7,10 @@ $loader=new \Aura\Autoload\Loader();
 $loader->register();
 $loader->addPrefix('\TrainingProject', 'C:\PersonalProjects\TrainingProject');
 
+session_start();
+echo "SESSION ID - MAIN: " . session_id();
+echo ini_get('session.cookie_domain');
+
 //TODO make switch statement that instantiates the proper controller class, calls the method, based on the URL
 //$module = "login";
 //if($module == 'login'){
@@ -26,4 +30,3 @@ $router->resolve($_SERVER['PATH_INFO']);
 
 // Take URI and split into its components localhost/controller/memberFunctionToCall
 // Instantiate Controller and call that Member Function
-?>

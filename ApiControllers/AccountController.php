@@ -1,0 +1,2 @@
+<?php
+//still make a GET handler, but we won't use it for now. only SS dynamic, not CS dynamic. later we'll do CS dynamic

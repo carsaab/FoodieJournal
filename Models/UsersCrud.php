@@ -1,11 +1,9 @@
 <?php
+namespace TrainingProject\Models;
 
-class usersCrud{
-    private $db;
-
+class UsersCrud extends Crud{
     function __construct(){
-        $this->db = mysqli_connect("localhost", "ldbuser", $_ENV["DB_PASSWORD"],
-            "trainingproject");
+        $this->db = $this->connectToDb();
     }
 
     function fetchUserId($username){
@@ -23,6 +21,8 @@ class usersCrud{
 
 
     function create($user){
+        error_reporting(E_ALL);
+        ini_set('display_errors','On');
         $email = mysqli_real_escape_string($this->db, $user["email"]);
         $username = mysqli_real_escape_string($this->db, $user["username"]);
         $password = mysqli_real_escape_string($this->db, $user["password"]);

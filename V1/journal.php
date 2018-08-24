@@ -6,7 +6,7 @@ session_start();
 $journalId = $_GET["journalId"];
 $journalName = $_GET["journalName"];
 $journalEncodedName = urlencode($journalName);
-$journalURL = "/journal-add.php?journalId=".$journalId."&journalName=".$journalEncodedName;
+$journalURL = "/entry-add.php?journalId=".$journalId."&journalName=".$journalEncodedName;
 
 $EntriesCrud = new entriesCrud($journalId);
 ?>
