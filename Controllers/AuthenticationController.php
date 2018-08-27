@@ -4,12 +4,14 @@ use \TrainingProject\Models;
 
 class AuthenticationController extends Controller{
      function __construct() {
-        $this->model = new Models\UsersCrud();
+        $this->model = new Models\UsersDataManager();
      }
 
      //POST
     public function login(){
-        if (!isset($_POST["submit"]) && 0){
+        require_once ("C:\PersonalProjects\TrainingProject\Views\login.html"); //TODO don't hardcode path
+
+        if (!isset($_POST["submit"])){
             return;
         }
 
@@ -20,6 +22,7 @@ class AuthenticationController extends Controller{
         }
         else{
             $_SESSION["userId"] = $userId;
+            $_SESSION["username"] = $_POST["username"];
             $this->redirect("/");
         }
     }

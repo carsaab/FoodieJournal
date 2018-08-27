@@ -1,16 +1,3 @@
-<?php
-require_once("foodie-journal-printers.php");
-require("foodieJournalCrudClasses.inc");
-session_start();
-
-$journalId = $_GET["journalId"];
-$journalName = $_GET["journalName"];
-$journalEncodedName = urlencode($journalName);
-$journalURL = "/entry-add.php?journalId=".$journalId."&journalName=".$journalEncodedName;
-
-$EntriesCrud = new entriesCrud($journalId);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +17,18 @@ $EntriesCrud = new entriesCrud($journalId);
     <input type="submit" name="submit" value="Create Entry"> <br><br><br>
 </form>
 
-<?php printJournalContents($journalId, $EntriesCrud); ?>
+<?php $journalPrinter->printJournalContents($entries); ?>
+
+<? if ($entries === 0){ ?>
+    You don't have any journal entries yet! Create one above.
+<?
+    } else {
+        foreach ($entries as $entry){
+            include ("C:\PersonalProjects\TrainingProject\Views\index.html");
+        }
+    }
+?>
+
 
 </body>
 </html>

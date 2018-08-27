@@ -1,7 +1,7 @@
 <?php
 namespace TrainingProject\Models;
 
-class UsersCrud extends Crud{
+class UsersDataManager extends DataManager{
     function __construct(){
         $this->db = $this->connectToDb();
     }

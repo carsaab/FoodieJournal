@@ -1,0 +1,20 @@
+<h3>
+    <?=$entry["restaurant_name"]?>
+</h3>
+<? $possibleRatings = [1, 2, 3, 4, 5]; ?>
+<? if(!in_array($rating, $possibleRatings)) { ?>
+    No rating
+<? } else { ?>
+    <? for ( $i = 0; $i < $rating; $i++){ ?>
+        &starf;
+    <? } ?>
+<? } ?>
+
+<br>
+<b>Impression:</b>
+<?= $entry["text"] ?>
+<br>
+<?= $entry["created"] ?>
+<br>
+<br>
+<br>

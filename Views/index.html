@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> FoodieJournal | Home </title>
+</head>
+<body>
+
+<h1> Welcome, <?=$username?> </h1>
+
+<form method = "post" action="" name="new_entry">
+    <!--TODO form to create new journal-->
+</form>
+
+<?php $journalPrinters->printCurrentUsersJournals($journals); ?>
+
+<br> <br>
+<a href="/account">Account</a> <br>
+<a href="/logout">Logout</a>
+</body>
+</html>

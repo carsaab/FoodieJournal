@@ -19,14 +19,19 @@ echo ini_get('session.cookie_domain');
 //} else if ($module == 'journal'){
 //    // $controller = new Journal();
 //}
-
+try{
 // Instantiate Router
 $routes = include 'C:/PersonalProjects/TrainingProject/Routing/' . 'routes.php';
 
 echo $_SERVER['PATH_INFO'] . "     ";
 echo $_SERVER['REQUEST_METHOD'];
+$path = isset($_SERVER['PATH_INFO']) ? $_SERVER['PATH_INFO'] : '/';
 $router = new Router($routes);
-$router->resolve($_SERVER['PATH_INFO']);
+$router->resolve($path, $_SERVER['REQUEST_METHOD']);
 
 // Take URI and split into its components localhost/controller/memberFunctionToCall
 // Instantiate Controller and call that Member Function
+}
+catch(Exception $e){
+    echo $e;
+}

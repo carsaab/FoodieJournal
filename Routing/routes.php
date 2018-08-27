@@ -4,20 +4,21 @@
 return[
 
     //Account Controller
-    ['GET', '/account/manage', 'AccountController','manage'],
-    ['POST', '/account/create', 'AccountController', 'create'],
-    ['GET', '/account/delete', 'AccountController', 'delete'],
+    ['GET', '/account', 'AccountController','manage'],
+    ['POST', '/api/account', 'AccountController', 'create'],
+    ['DELETE', '/api/account', 'AccountController', 'delete'],
 
     //Authentication Controller
-    ['POST', '/authentication/login', 'AuthenticationController', 'login'],
-    ['GET', '/authentication/logout', 'AuthenticationController', 'logout'],
+    ['GET', '/login', 'AuthenticationController', 'login'],
+    ['POST', '/login', 'AuthenticationController', 'login'],
+    ['GET', '/logout', 'AuthenticationController', 'logout'],
 
     //Journal Controller
     ['GET', '/', 'JournalController', 'index'],
-    ['POST', '/journal/create', 'JournalController', 'create'],
-    ['GET', '/journal/delete', 'JournalController', 'delete'],
-    ['GET', '/journal/open', 'JournalController', 'open'],
-    ['POST', '/journal/write', 'JournalController', 'write'],
+    ['POST', '/api/journal/', 'JournalController', 'create'],
+    ['DELETE', '/api/journal/', 'JournalController', 'delete'],
+    ['GET', '/api/journal/entry', 'JournalController', 'open'],
+    ['POST', '/api/journal/entry', 'JournalController', 'write'],
 
     ['GET', '/login/write', 'Login', 'write'],
     ['GET', '/login/joy', 'Login', 'joy'],

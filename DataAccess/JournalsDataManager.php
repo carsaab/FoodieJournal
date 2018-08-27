@@ -1,7 +1,7 @@
 <?php
 namespace TrainingProject\Models;
 
-class JournalsCrud{
+class JournalsDataManager extends DataManager{
     private $userId;
 
     function __construct($userId){
@@ -36,7 +36,7 @@ class JournalsCrud{
     }
 
 
-    function fetchJournals($userId){
+    function getJournals($userId){
         $query = sprintf("SELECT * FROM journals WHERE user_id='%s'",$userId);
         $journals = mysqli_query($this->db, $query);
         $numberOfJournals =  mysqli_num_rows($journals);
@@ -47,4 +47,3 @@ class JournalsCrud{
         return $journals;
     }
 }
-?>

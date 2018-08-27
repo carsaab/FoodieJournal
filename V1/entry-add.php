@@ -1,8 +1,8 @@
 <?php
 require_once("foodieJournalCrudClasses.inc");
 $journalEncodedName = urlencode($_GET['journalName']);
-$journalURL = "/journal.php?journalId=".$_GET['journalId']."&journalName=".$journalEncodedName;
-//TODO why does this not work? header('Location: /journal.php?journalId='.$_GET['journalId'].'&'.$journalEncodedName);
+$journalURL = "/journal?journalId=".$_GET['journalId']."&journalName=".$journalEncodedName;
+//TODO why does this not work? header('Location: /journal?journalId='.$_GET['journalId'].'&'.$journalEncodedName);
 
 if (isset($_POST["submit"])){
     $EntriesCrud = new entriesCrud($_GET['journalId']);

@@ -16,21 +16,22 @@ class Router{
 
 
     function addRoute($method, $uri, $controller, $action){
-        $this->routes[$uri] = new Route([$method, $uri,  $controller, $action]);
+        $this->routes[$uri][$method] = new Route([$method, $uri,  $controller, $action]);
     }
 
 
-    function resolve($uri){
+    function resolve($uri, $method){
         // TODO verify that uri is in routes
         // TODO verify that method is in allowedMethods
 
-        $route = $this->routes[$uri]; //uses Route class
+        $route = $this->routes[$uri][$method]; //uses Route class
         $controllerClassName = "TrainingProject\Controllers\\" . $route->getController(); //TODO don't use explicit namespace here. use aliasing in a different file instead
         $controller = new $controllerClassName();
         $action = $route->getAction();
+        $getParametersIndexedArray = array_values($_GET);
 
         //call specified member function (aka perform the "action")
-        call_user_func($controller->{$action}());
+        call_user_func_array($controller->{$action}(), $getParametersIndexedArray);
     }
 }
 

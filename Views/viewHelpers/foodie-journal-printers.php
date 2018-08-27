@@ -1,7 +1,7 @@
 <?php
+namespace TrainingProject\Views;
 
-
-class Printers {
+class JournalPrinters {
 function printStars($rating){
     if ($rating == "1"){
         echo "&starf;";
@@ -32,7 +32,7 @@ function printStars($rating){
 
 function printEntry($entry){
     echo "<h3>".$entry["restaurant_name"]."</h3>";
-    printStars($entry["rating"]);
+    $this->printStars($entry["rating"]);
     echo "<br> <b>Impression:</b> " . $entry["text"] . "<br>";
     echo $entry["created"] . "<br>";
     echo "<br><br>";
@@ -40,15 +40,13 @@ function printEntry($entry){
 }
 
 
-function printJournalContents($journalId, $EntriesCrud){
-    $entries = $EntriesCrud->fetchEntries($journalId);
-
+function printJournalContents($entries){
     if ($entries === 0){
         echo "You don't have any journal entries yet! Create one above.";
     }
     else{
         foreach ($entries as $entry){
-            printEntry($entry);
+            $this->printEntry($entry);
         }
     }
     return;
@@ -57,7 +55,7 @@ function printJournalContents($journalId, $EntriesCrud){
 function printJournalNameAsLink($journal){
     $journalId = $journal["journal_id"];
     $journalName = $journal["journal_name"];
-    $journalURL = "/journal.php?journalId=".$journalId."&journalName=".urlencode($journalName);
+    $journalURL = "/api/journal/entry?journalId=".$journalId."&journalName=".urlencode($journalName);
     echo "<a href=".$journalURL.">".$journalName."</a><br><br>";
     return;
 }
@@ -65,22 +63,19 @@ function printJournalNameAsLink($journal){
 function printLinksToTheseJournals($journals){
 
     foreach ($journals as $journal){
-            printJournalNameAsLink($journal);
+            $this->printJournalNameAsLink($journal);
     }
     return;
 }
 
 
-function printCurrentUsersJournals($userId, $JournalsCrud){
-    $journals = $JournalsCrud->fetchJournals($userId);
-
+function printCurrentUsersJournals($journals){
     if ($journals === 0){
         echo "You don't have any journal yet! Create one above.";
     }
     else{
-        printLinksToTheseJournals($journals);
+        $this->printLinksToTheseJournals($journals);
     }
     return;
 }
 }
-?>

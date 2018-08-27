@@ -15,5 +15,12 @@ abstract class Controller{
         exit;
     }
 
+    public function render($view, $params = null){
+        if ($params){
+            extract($params);
+        }
+        $view = "C:\PersonalProjects\TrainingProject\Views\\" . $view . ".html"; //TODO don't hardcode path, use constant
+        include $view;
+    }
 
 }
