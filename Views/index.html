@@ -11,7 +11,14 @@
     <!--TODO form to create new journal-->
 </form>
 
-<?php $journalPrinters->printCurrentUsersJournals($journals); ?>
+<? if ($journals === 0){ ?>
+    You don't have any journal yet! Create one above.
+<? }
+    else{
+        foreach ($journals as $journal){
+            include ("journalName.html");
+        }
+    } ?>
 
 <br> <br>
 <a href="/account">Account</a> <br>

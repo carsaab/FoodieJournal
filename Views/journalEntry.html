@@ -1,20 +1,20 @@
 <h3>
-    <?=$entry["restaurant_name"]?>
+    <?=$entry->restaurant_name?>
 </h3>
-<? $possibleRatings = [1, 2, 3, 4, 5]; ?>
-<? if(!in_array($rating, $possibleRatings)) { ?>
+<? $possibleRatings = ['1', '2', '3', '4', '5']; ?>
+<? if(!in_array($entry->rating, $possibleRatings)) { ?>
     No rating
 <? } else { ?>
-    <? for ( $i = 0; $i < $rating; $i++){ ?>
+    <? for ( $i = 0; $i < $entry->rating; $i++){ ?>
         &starf;
     <? } ?>
 <? } ?>
 
 <br>
 <b>Impression:</b>
-<?= $entry["text"] ?>
+<?= $entry->text ?>
 <br>
-<?= $entry["created"] ?>
+<?= $entry->created ?>
 <br>
 <br>
 <br>

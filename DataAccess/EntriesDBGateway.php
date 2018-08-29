@@ -1,26 +1,26 @@
 <?php
-namespace TrainingProject\Models;
+namespace TrainingProject\DataAccess;
+use \TrainingProject\Models\Entry;
 
 class EntriesDBGateway {
     private $journalId;
     private $database;
+
 
     function __construct($journalId){
         $this->journalId = $journalId;
         $this->database = new DataManager();
     }
 
-    public function create($entry){
-        $restaurantName = mysqli_real_escape_string($this->db, $entry["restaurantName"]); //TODO write escapeEachValue() fn
-        $rating = mysqli_real_escape_string($this->db, $entry["rating"]);
-        $text =  mysqli_real_escape_string($this->db, $entry["text"]);
-        $wouldReturn = mysqli_real_escape_string($this->db, $entry["wouldReturn"]);
 
+    public function create($entry){
         $query = "INSERT INTO entries (restaurant_name, rating, text, would_return, journal_id)
-                          VALUES('{$restaurantName}', '{$rating}', '{$text}', '{$wouldReturn}', $this->journalId)";
+                          VALUES('{$entry['restaurantName']}', '{$entry['rating']}', '{$entry['text']}', '{$entry['wouldReturn']}', $this->journalId)";
         echo $query,"<br>";
+        echo "test";
         $this->database->query($query);
     }
+
 
     public function read($entryId){
         $query = "SELECT * FROM entries WHERE entry_id='{$entryId}'";
@@ -28,17 +28,18 @@ class EntriesDBGateway {
         return Entry::fromArray($this->database->fetch());
     }
 
+
     public function update(){}
 
-    public function delete($entryId){
-        $entryId = mysqli_real_escape_string($this->db, $entryId);
 
+    public function delete($entryId){
         $query = "DELETE FROM entries WHERE entry_id= '{$entryId}'";
         $this->database->query($query);
     }
 
+
     function getEntries($journalId){
-        $query = "SELECT * FROM entries WHERE journal_id='{$journalId}'";
+        $query = "SELECT * FROM entries WHERE journal_id={$journalId}";
         $this->database->query($query);
         $numberOfEntries =  $this->database->rowCount();
 

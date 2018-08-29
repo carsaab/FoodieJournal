@@ -4,7 +4,7 @@ namespace TrainingProject\Controllers;
 
 abstract class Controller{
     protected $view;
-    protected $model;
+    protected $databaseGateway;
 
     protected function getPost(){
         return $_POST;

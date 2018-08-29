@@ -1,10 +1,11 @@
 <?php
 namespace TrainingProject\Controllers;
 use \TrainingProject\Models;
+use \TrainingProject\DataAccess;
 
 class AuthenticationController extends Controller{
      function __construct() {
-        $this->model = new Models\UsersDataManager();
+        $this->databaseGateway = new DataAccess\UsersDBGateway();
      }
 
      //POST
@@ -15,7 +16,7 @@ class AuthenticationController extends Controller{
             return;
         }
 
-        $userId = $this->model->fetchUserId($_POST["username"]);
+        $userId = $this->databaseGateway->fetchUserId($_POST["username"]);
         if ($userId === 0){
             echo "Email Address and/or Password incorrect. Please try again.";
             return;

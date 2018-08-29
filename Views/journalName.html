@@ -1,0 +1,8 @@
+<? $journalId = $journal->journal_id; ?>
+<? $journalName = $journal->journal_name; ?>
+<? $journalURL = "/journal/entry?journalId=".$journalId."&journalName=".urlencode($journalName); ?>
+<a href= "<?=$journalURL?>" >
+    <?=$journalName?>
+</a>
+<br>
+<br>

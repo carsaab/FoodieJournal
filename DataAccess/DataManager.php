@@ -1,21 +1,22 @@
 <?php
-namespace TrainingProject\Models;
+namespace TrainingProject\DataAccess;
 
 class DataManager{
-    private $db;
+    private $database;
     private $result;
 
     function __construct(){
-        $this->db = $this->connectToDb();
+        $this->database = $this->connectToDb();
     }
 
     private function connectToDb(){
-        $db = mysqli_connect("localhost", "ldbuser", $_ENV["DB_PASSWORD"], "trainingproject");
-        return $db;
+        $database = mysqli_connect("localhost", "ldbuser", $_ENV["DB_PASSWORD"], "trainingproject");
+        return $database;
     }
 
     public function query($query){
-        $this->result = mysqli_query($this->db, $query);
+        //$query = mysqli_real_escape_string($this->database, $query);
+        $this->result = mysqli_query($this->database, $query);
     }
 
     public function fetchAll(){
@@ -24,6 +25,11 @@ class DataManager{
             $rows[] = $row;
         }
         return $rows;
+        //TODO Why not return $result? let's check this out in the debugger
+    }
+
+    public function getLastInsertId(){
+        return mysqli_insert_id($this->database);
     }
 
     public function fetch(){
@@ -32,6 +38,6 @@ class DataManager{
 
     public function rowCount(){
         return mysqli_num_rows($this->result);
-    };
+    }
 
 }

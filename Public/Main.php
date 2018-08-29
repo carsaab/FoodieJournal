@@ -6,6 +6,9 @@ require_once 'vendor/aura-autoload/autoload.php';
 $loader=new \Aura\Autoload\Loader();
 $loader->register();
 $loader->addPrefix('\TrainingProject', 'C:\PersonalProjects\TrainingProject');
+//
+//error_reporting(E_ALL);
+//ini_set('display_errors','On');
 
 session_start();
 echo "SESSION ID - MAIN: " . session_id();

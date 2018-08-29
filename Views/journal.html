@@ -7,28 +7,17 @@
 
 <h1> <?= $journalName ?> <br><br> </h1>
 
-<form method="post" action="<?=$journalURL?>" name="createEntry">
-    Restaurant <input type="text" name="restaurantName"> <br><br>
-    Rating <input type="text" name ="rating"> <br><br>
-    Impression <input type="text" name="text"> <br><br>
-    Would you eat here again? <input type="radio" name = "wouldReturn" value="1"> Yes
-                                <input type="radio" name="wouldReturn" value="0"> No
-                                <br><br>
-    <input type="submit" name="submit" value="Create Entry"> <br><br><br>
-</form>
-
-<?php $journalPrinter->printJournalContents($entries); ?>
+<? include ("C:\PersonalProjects\TrainingProject\Views\\formCreateEntry.html"); ?>
 
 <? if ($entries === 0){ ?>
     You don't have any journal entries yet! Create one above.
 <?
     } else {
         foreach ($entries as $entry){
-            include ("C:\PersonalProjects\TrainingProject\Views\index.html");
+            include ("C:\PersonalProjects\TrainingProject\Views\journalEntry.html");
         }
     }
 ?>
-
 
 </body>
 </html>

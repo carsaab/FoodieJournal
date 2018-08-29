@@ -1,6 +1,7 @@
 <?php
 namespace TrainingProject\Controllers;
 use \TrainingProject\Models;
+use \TrainingProject\DataAccess;
 use \TrainingProject\Views;
 
 class JournalController extends Controller{
@@ -8,21 +9,21 @@ class JournalController extends Controller{
     private $entriesModel;
 
     function __construct() {
-        $this->model = new Models\JournalsDataManager($_SESSION["userId"]);
-        $this->entriesModel = new Models\EntriesDBGateway($_GET["journalId"]);
+        $this->databaseGateway = new DataAccess\JournalsDBGateway($_SESSION["userId"]);
+        $this->entriesDatabaseGateway = new DataAccess\EntriesDBGateway($_GET["journalId"]);
     }
 
     public function index(){
         $username = $_SESSION["username"];
         $userId = $_SESSION["userId"];
-        $journals = $this->model->getJournals($userId);
+        $journals = $this->databaseGateway->getJournals($userId);
         require_once ("C:\PersonalProjects\TrainingProject\Views\index.html"); //TODO don't hardcode path
     }
 
     //POST
     public function create(){
         $newJournalInfo = $this->getPost();
-        $this->model->create($newJournalInfo);
+        $this->databaseGateway->create($newJournalInfo);
     }
 
 
@@ -33,7 +34,7 @@ class JournalController extends Controller{
 
 
     public function delete($journalId){
-        $this->model->delete($journalId);
+        $this->databaseGateway->delete($journalId);
     }
 
     //View all the entries in a journal
@@ -43,14 +44,11 @@ class JournalController extends Controller{
         * declare the variables used by the openedJournal view
         * extract them using render function and put them into the loaded view */
 
-        require_once("C:/PersonalProjects/TrainingProject/Views/viewHelpers/foodie-journal-printers.php"); //TODO don't hardcode path
-        $journalPrinter = new Views\JournalPrinters();
-
         $journalId = $_GET["journalId"];
         $journalName = $_GET["journalName"];
         $journalEncodedName = urlencode($journalName);
-        $journalURL = "/entry-add.php?journalId=".$journalId."&journalName=".$journalEncodedName;
-        $entries = $this->entriesModel->getEntries($journalId);
+        $entryAddUrl = "/api/journal/entry?journalId=".$journalId."&journalName=".$journalEncodedName; //."&XDEBUG_SESSION_START=16029";
+        $entries = $this->entriesDatabaseGateway->getEntries($journalId);
 
         require_once ("C:\PersonalProjects\TrainingProject\Views\journal.html");
     }
@@ -59,7 +57,7 @@ class JournalController extends Controller{
     // Create a new entry
     public function write() {
         $entry = $this->getPost();
-        $this->model->create($entry);
+        $this->entriesDatabaseGateway->create($entry);
     }
 
 }
